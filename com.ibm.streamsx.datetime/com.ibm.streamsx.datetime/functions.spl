@@ -1,0 +1,14 @@
+namespace com.ibm.streamsx.datetime;
+
+/**
+ * Get the current time using getTimestamp().
+ * Renamed version of `getTimestamp` with a natural name.
+ */
+public timestamp now() { return getTimestamp(); }
+
+/**
+ * Get the current time using getTimestamp().
+ * Renamed version of `getTimestamp` with a natural name.
+ */
+public timestamp currentTimestamp() { return getTimestamp(); }
+
