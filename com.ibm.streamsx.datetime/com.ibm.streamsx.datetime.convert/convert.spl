@@ -37,7 +37,9 @@ public float64 hours(int32 hours) {
 /**
  * Convert hours to seconds as a `float64`.
  * This is useful for readable values in
- * a time based window definitions.
+ * a time based window definitions. For example:
+ *     // Set the period to be two hours
+ *     parameter period: hours(2);
  */
 public float64 hours(float64 hours) {
     return minutes(hours * 60.0);
@@ -46,7 +48,9 @@ public float64 hours(float64 hours) {
 /**
  * Convert whole minutes to seconds as a `float64`.
  * This is useful for readable values in
- * a time based window definitions.
+ * a time based window definitions. For example:
+ *     // Set the period to be five minutes
+ *     parameter period: minutes(5);
  */
 public float64 minutes(int32 minutes) {
     return minute((float64) minutes);
@@ -55,10 +59,25 @@ public float64 minutes(int32 minutes) {
 /**
  * Convert minutes to seconds as a `float64`.
  * This is useful for readable values in
- * a time based window definitions.
+ * a time based window definitions. For example:
+ * 
+ *     // Tumbling window with a two and half minute eviction policy
+ *     window IN: tumbling, time(minutes(2.5));
  */
 public float64 minutes(float64 minutes) {
     return minutes * 60.0;
+}
+
+/**
+ * Returns the same value.
+ * This is useful for readable values in
+ * a time based window definitions. For example:
+ * 
+ *     // Tumbling window with 3 second eviction policy
+ *     window IN: tumbling, time(seconds(3));
+ */
+public float64 seconds(float64 seconds) {
+    return seconds;
 }
 
 
