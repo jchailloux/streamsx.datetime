@@ -5,6 +5,12 @@
 # disclosure restricted by GSA ADP Schedule Contract with
 # IBM Corp.
 */
+
+/**
+ * Support for conversion between date and time representations,
+ * such as converting minutes to seconds.
+ */
+ 
 namespace com.ibm.streamsx.datetime.convert;
 
 /**
