@@ -1,0 +1,57 @@
+namespace com.ibm.streamsx.datetime.convert;
+
+/**
+ * Convert days to seconds as a `float64`.
+ * This is useful for readable values in
+ * a time based window definitions.
+ */
+public float64 days(int32 days) {
+    return days((float64) days);
+}
+
+/**
+ * Convert days to seconds as a `float64`.
+ * This is useful for readable values in
+ * a time based window definitions.
+ */
+public float64 days(float32 days) {
+    return hours(days * 24.0);
+}
+
+/**
+ * Convert whole hours to seconds as a `float64`.
+ * This is useful for readable values in
+ * a time based window definitions.
+ */
+public float64 hours(int32 hours) {
+    return hours((float64) hours);
+}
+
+/**
+ * Convert hours to seconds as a `float64`.
+ * This is useful for readable values in
+ * a time based window definitions.
+ */
+public float64 hours(float64 hours) {
+    return minutes(hours * 60.0);
+}
+
+/**
+ * Convert whole minutes to seconds as a `float64`.
+ * This is useful for readable values in
+ * a time based window definitions.
+ */
+public float64 minutes(int32 minutes) {
+    return minute((float64) minutes);
+}
+
+/**
+ * Convert minutes to seconds as a `float64`.
+ * This is useful for readable values in
+ * a time based window definitions.
+ */
+public float64 minutes(float64 minutes) {
+    return minutes * 60.0;
+}
+
+
