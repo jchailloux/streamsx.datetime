@@ -138,3 +138,22 @@ public float64 seconds(float64 seconds) {
 }
 
 
+/**
+ * Convert a timestamp to string representation (ISO 8601)
+ * 
+ *  Delimiter between date and time is : T
+ * 	Date : Year-month-day
+ * 	Time : hour:minute:second.nanoseconds
+ * 	Timezone : +/-hour_minute (difference with the UTC time)
+ * 
+ *  For example : 
+ * 		(1397487162,840148000,0) -> "2014-04-14T16:52:42.840148000+0200"
+ * 
+ * @param dtime timestamp to convert
+ */
+
+public rstring timestampToISO(timestamp dtime){
+	mutable Sys.tm timetuple = { } ;
+   	time(dtime, timetuple) ;
+	return strftime(timetuple,"%Y-%m-%dT%H:%M:%S.")+(rstring)getNanoseconds(dtime)+strftime(timetuple, "%z");
+}
